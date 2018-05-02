@@ -1,0 +1,28 @@
+site_name: Xakraz's conferences notes
+site_url: https://xakraz.github.io/notes-conferences/
+
+repo_name: xakraz/notes-conferences
+repo_url: https://github.com/xakraz/notes-conferences
+
+docs_dir: 'docs'
+site_dir: 'site'
+
+use_directory_urls: true
+theme:
+  name: 'material'
+  palette:
+    primary: 'blue grey'
+    accent: 'indigo'
+
+markdown_extensions:
+  - smarty
+  - sane_lists
+  - nl2br
+  - pymdownx.github
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - toc:
+      anchorlink: true
+      title: 'Table of content'
+      baselevel: 2

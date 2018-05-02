@@ -1,0 +1,95 @@
+#!/usr/bin/env bash
+#
+# Mkdocs
+#
+# - http://www.mkdocs.org/user-guide/configuration/
+#
+#
+# == Bash options
+#
+set -o errexit
+set -o nounset
+set -o pipefail
+
+
+
+# == Variables
+#
+SCRIPT_NAME=$(basename $(readlink -e ${BASH_SOURCE[0]}))
+
+DOCKER_REGISTRY=''    # Docker Hub
+DOCKER_REPOSITORY=''                  # Docker Library images
+DOCKER_IMAGE_NAME='squidfunk/mkdocs-material'
+DOCKER_IMAGE_VERSION='latest'
+
+docker_args='--rm --log-driver=none'
+docker_env_vars=''
+docker_cmd="$@"
+
+
+
+(>&2 echo "===> ${SCRIPT_NAME}: Start")
+
+# == Compute config
+#
+(>&2 echo "---> Computing docker config")
+
+# === Docker
+#
+docker_image=''
+
+# Manage Docker Hub
+[[ -n "${DOCKER_REGISTRY}" ]] \
+  && docker_image="${DOCKER_REGISTRY}/"
+
+# Manage Library repos
+[[ -n "${DOCKER_REPOSITORY}" ]] \
+  && docker_image="${docker_image}${DOCKER_REPOSITORY}/"
+
+# Compute full image name
+docker_image="${docker_image}${DOCKER_IMAGE_NAME}"
+docker_image="${docker_image}:${DOCKER_IMAGE_VERSION}"
+
+# Option to shell out
+if [[ 'shell' == "${docker_cmd}" ]]; then
+  docker_args="${docker_args} --entrypoint /bin/sh -it"
+  docker_cmd=''
+elif [[ 'serve' == "${docker_cmd}" ]]; then
+  docker_args="${docker_args} -it --publish 8000:8000"
+  docker_cmd=''
+elif [[ 'deploy' == "${docker_cmd}" ]]; then
+  docker_args="${docker_args} -it"
+  docker_cmd='gh-deploy'
+else
+  docker_args="${docker_args} -it"
+  docker_cmd='build'
+fi
+
+
+# Run the container as the user
+docker_args="${docker_args} --name ${SCRIPT_NAME}-$(uuidgen)"
+docker_args="${docker_args} --user $(id -u)"
+docker_args="${docker_args} --env HOME=${HOME}"
+docker_args="${docker_args} --volume=${HOME}/.ssh:${HOME}/.ssh:ro"
+docker_args="${docker_args} --volume=${HOME}/.ssh/tmp:${HOME}/.ssh/tmp:rw"
+docker_args="${docker_args} --volume=/etc/passwd:/etc/passwd:ro"
+docker_args="${docker_args} --volume=/etc/group:/etc/group:ro"
+docker_args="${docker_args} --volume=/etc/shadow:/etc/shadow:ro"
+
+#
+docker_args="${docker_args} --volume=${PWD}:$(pwd)"
+docker_args="${docker_args} --workdir=$(pwd)"
+
+
+# == Main
+#
+(>&2 echo "---> Docker run")
+
+docker run \
+  ${docker_args} \
+  ${docker_env_vars} \
+  ${docker_image} \
+  ${docker_cmd}
+
+
+(>&2 echo "===> ${SCRIPT_NAME}: Done")
