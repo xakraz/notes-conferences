@@ -6,6 +6,11 @@
             "title": "IT Conferences notes"
         }, 
         {
+            "location": "/_index/", 
+            "text": "IT Conferences notes\n\n\nNotes taken during various IT Tech conferences I have attended.", 
+            "title": "IT Conferences notes"
+        }, 
+        {
             "location": "/2016/coreosfest/day1/20160509_CoreOSFest-1/", 
             "text": "20160509_CoreOSFest-1\n\n\n\n\n\n\n\n1 - Intro\n\n\n1.1 - Mission\n\n\n1.2 - Speakers and spotlight\n\n\n1.3 Timeline\n\n\n1.4 - News\n\n\ngRPC\n\n\nInmages discovery + transport\n\n\nOCI\n\n\n\n\n\n\n\n\n\n\n\n1 - Intro\n\n\n1.1 - Mission\n\n\nSecure the Internet\n\n\nPush / force updates the fastest and the safest possible\n\n\n1.2 - Speakers and spotlight\n\n\n\n\nRkt\n\n\nDEX\n\n\nClair / HyperClair CLI\n\n\n\n\n1.3 Timeline\n\n\n\n\n2.5 Years ago: Applications containers\n\n\nDocker inspired\n\n\n1.5 Years ago: Standards + security\n\n\nAppCI\n\n\nOCI\n\n\n1 Year ago: Kubertenes 1.0\n\n\nApplication orchestration\n\n\n\n\n1.4 - News\n\n\ngRPC\n\n\nMuch much more efficient\n\n-\n Update etcd\n\n-\n Update Fleet\n\n\nInmages discovery + transport\n\n\nQuay.io\n\n- Bittorrent\n\n- Squashed\n\n\nJwtproxy\n\n\nOCI\n\n\n\n\nMaintainer from across the industry\n\n\nBest of AppCI + Docker Inage\n\n-\n OCI Image Spec\n\n-\n Support comming (AWS containers registry, DockerHub, Google containers registry, Quai.io, \n)\n\n\n\n\nhttps://github.com/opencontainers/runtime-spec", 
             "title": "20160509 CoreOSFest 1"
