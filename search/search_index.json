@@ -3644,6 +3644,141 @@
             "location": "/2018/kubecon/day2/20180503_keynote_5/#ccl", 
             "text": "The  fraud syndrome", 
             "title": "CCL"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_other-resources/", 
+            "text": "Other resources\n\n\nCNI: \nhttps://schd.ws/hosted_files/kccnceu18/64/Kubernetes-and-the-CNI-Kubecon-218.pdf\n\nKube day2: \nhttps://schd.ws/hosted_files/kccnceu18/fe/Managing%20Kubernetes-Day%202.pdf", 
+            "title": "Other resources"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_1/", 
+            "text": "20180503_talk_1\n\n\n\n\n\n\n\nAutoscaling with Prometheus\n\n\nType of scales\n\n\nHistory in K8s\n\n\nk8s 1.1\n\n\n\n\n\n\nNew Resource \n Custom Metrics APis\n\n\nPrometheus intro\n\n\nHorizontalPodAutoscaler (v2Bbta1)\n\n\n\n\n\n\nFuture\n\n\n\n\n\n\n\nAutoscaling with Prometheus\n\n\nType of scales\n\n\nVertical\n\n* Increase the resource liit when necessary\n\n\nHorizontal\n\n* Increase the number of instances\n\n\nHistory in K8s\n\n\nk8s 1.1\n\n\nUsed to rely on \nHeapster\n\n* \nHeapster\n collects metrics and write to TSDB\n\n* \nHeapster\n was compiled to the \nkubelet\n\n* Added manifests \nKind: HorizontalPodAutoscaler\n\n\n....\nspec:\n  scaleRef:\n    ...\n  minReplicas:\n  maxReplicas:\n\n\n\n\nBUT\n\n* Only based on CPU % resource\n\n* Loosely specified APIs\n\n* Unmaintained vendor implem\n\n* Push only TSDB\n\n\nNew Resource \n Custom Metrics APis\n\n\nPrometheus intro\n\n\nHorizontalPodAutoscaler (v2Bbta1)\n\n\nResource Metrics APis\n\n\n...\nspec:\n  scaleRef:\n    ...\n  minReplicas:\n  maxReplicas:\n\n  metrics:\n  - type: Pods\n    pods:\n      metricName: http_requets\n      targetAverageValue: 200\n\n\n\nProm query\n\n\nsum(rate(http_requests_total{namespace=\n...\n}[5min]))\n\n\n\nCustum Metrics APis\n\n* Need a \nk8s-prometheus-adapter\n + \nPrometheus\n\n\n=\n k8s \n1.10\n\n\nFuture\n\n\nHeapster deprecation\n\n* Planned for \n1.13\n\n\nVerticalPod\n\n* AutoSizing in \nalpha\n for Prometheus\n\n\nCRD AutoScale\n\n* Planned for \n1.11\n\n\nStable metrics !\n\n\nCluster AutoScaler\n\n* Try to not be a separate thing\n\n\nStandardization of Monitoring\n\n* With OpenMetrics project", 
+            "title": "20180503_talk_1"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_1/#autoscaling-with-prometheus", 
+            "text": "", 
+            "title": "Autoscaling with Prometheus"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_1/#type-of-scales", 
+            "text": "Vertical \n* Increase the resource liit when necessary  Horizontal \n* Increase the number of instances", 
+            "title": "Type of scales"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_1/#history-in-k8s", 
+            "text": "", 
+            "title": "History in K8s"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_1/#k8s-11", 
+            "text": "Used to rely on  Heapster \n*  Heapster  collects metrics and write to TSDB \n*  Heapster  was compiled to the  kubelet \n* Added manifests  Kind: HorizontalPodAutoscaler  ....\nspec:\n  scaleRef:\n    ...\n  minReplicas:\n  maxReplicas:  BUT \n* Only based on CPU % resource \n* Loosely specified APIs \n* Unmaintained vendor implem \n* Push only TSDB", 
+            "title": "k8s 1.1"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_1/#new-resource-custom-metrics-apis", 
+            "text": "", 
+            "title": "New Resource &amp; Custom Metrics APis"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_1/#prometheus-intro", 
+            "text": "", 
+            "title": "Prometheus intro"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_1/#horizontalpodautoscaler-v2bbta1", 
+            "text": "Resource Metrics APis  ...\nspec:\n  scaleRef:\n    ...\n  minReplicas:\n  maxReplicas:\n\n  metrics:\n  - type: Pods\n    pods:\n      metricName: http_requets\n      targetAverageValue: 200  Prom query  sum(rate(http_requests_total{namespace= ... }[5min]))  Custum Metrics APis \n* Need a  k8s-prometheus-adapter  +  Prometheus  =  k8s  1.10", 
+            "title": "HorizontalPodAutoscaler (v2Bbta1)"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_1/#future", 
+            "text": "Heapster deprecation \n* Planned for  1.13  VerticalPod \n* AutoSizing in  alpha  for Prometheus  CRD AutoScale \n* Planned for  1.11  Stable metrics !  Cluster AutoScaler \n* Try to not be a separate thing  Standardization of Monitoring \n* With OpenMetrics project", 
+            "title": "Future"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_2/", 
+            "text": "20180503_talk_1\n\n\n\n\n\n\n\nKubeSpray Introduction\n\n\nk8s\n\n\nGoals\n\n\nRequirements\n\n\nDeployments\n\n\n\n\n\n\nKubespray\n\n\nOverview\n\n\nAnsible playbook\n\n\nApproach\n\n\nCommunity\n\n\nCi\n\n\nWorkflows\n\n\nHA\n\n\nScale tips\n\n\n\n\n\n\nNext steps\n\n\n\n\n\n\n\nKubeSpray Introduction\n\n\nk8s\n\n\nGoals\n\n\n\n\nRun app\n\n\nKeep these running\n\n\nGive resources\n\n\nConnecting them together\n\n\nPublishing services\n\n\n\n\nRequirements\n\n\n\n\nEtcd\n\n\nMasters\n\n\nWorkers\n\n\nContainer Runtime\n\n\nContainer Network\n\n\nPKI\n\n\nStorage\n\n\n\n\nDeployments\n\n\nDivivsive\n\n* Golang vs CfgMgnt\n\n* Orchestration approcaches (do your own)\n\n* CfgMgmt divisions\n\n* Not invented here syndrome\n\n* Reliability and maintenance\n\n\nEcosystem\n\n* Kops (cloud 1st, BareMetal now)\n\n* KubeAdm\n\n* Comercials\n\n\nKubespray\n\n\nOverview\n\n\n\n\nLifecycle manager\n\n\nFlexible and composable\n\n\nProd ready\n\n\nCommunity driven since 2015\n\n\n\n\nAnsible playbook\n\n\n\n\nComprehensive approach with playbooks concepts\n\n\nCovers all componenents\n\n\nReadable\n\n\nFlexible\n\n\nActively maintained\n\n\n\n\nApproach\n\n\n\n\nContainerize everything\n\n\nContainer engine option (Dokcer or rkt)\n\n\nDepoyment options (container-static-pods, Kubeadm, SelfHosted)\n\n\n\n\nCommunity\n\n\nAcvite \n Helpful: 250+ contributors\n\n\nCi\n\n\n\n\n20+ cluster topolgies tested\n\n\nDeploys real clusters\n\n\nRuns n GCE and DO\n\n\n\n\nWorkflows\n\n\nDeployment\n\n* Bootstrap OS\n\n* Preinstall (?)\n\n* Container Runtime\n\n* ETCD\n\n* PKI\n\n* Kube Masters\n\n* Kube workers\n\n* Network\n\n* DNS\n\n\nUpgrade\n\n* Change ansible value\n\n* Apply changes\n\n\n\n\nNotes\n\n\nUpgrade concerns: Drain nodes before maintenance\n\n\n\n\n\n\nHA\n\n\n\n\nETCD\n\n\nKubeAPIServer\n\n\nRuns Nnginx on every master servers (Or Cloud LBs of available)\n\n\n\n\nScale tips\n\n\n\n\nIOs for ETCD\n\n\n\n\nNext steps\n\n\n\n\nMore cloud providers support\n\n\nK8s e2e tests\n\n\nAuto-scaling\n\n\nMore add-on providers besides Helm", 
+            "title": "20180503_talk_1"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_2/#kubespray-introduction", 
+            "text": "", 
+            "title": "KubeSpray Introduction"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_2/#k8s", 
+            "text": "", 
+            "title": "k8s"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_2/#goals", 
+            "text": "Run app  Keep these running  Give resources  Connecting them together  Publishing services", 
+            "title": "Goals"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_2/#requirements", 
+            "text": "Etcd  Masters  Workers  Container Runtime  Container Network  PKI  Storage", 
+            "title": "Requirements"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_2/#deployments", 
+            "text": "Divivsive \n* Golang vs CfgMgnt \n* Orchestration approcaches (do your own) \n* CfgMgmt divisions \n* Not invented here syndrome \n* Reliability and maintenance  Ecosystem \n* Kops (cloud 1st, BareMetal now) \n* KubeAdm \n* Comercials", 
+            "title": "Deployments"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_2/#kubespray", 
+            "text": "", 
+            "title": "Kubespray"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_2/#overview", 
+            "text": "Lifecycle manager  Flexible and composable  Prod ready  Community driven since 2015", 
+            "title": "Overview"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_2/#ansible-playbook", 
+            "text": "Comprehensive approach with playbooks concepts  Covers all componenents  Readable  Flexible  Actively maintained", 
+            "title": "Ansible playbook"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_2/#approach", 
+            "text": "Containerize everything  Container engine option (Dokcer or rkt)  Depoyment options (container-static-pods, Kubeadm, SelfHosted)", 
+            "title": "Approach"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_2/#community", 
+            "text": "Acvite   Helpful: 250+ contributors", 
+            "title": "Community"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_2/#ci", 
+            "text": "20+ cluster topolgies tested  Deploys real clusters  Runs n GCE and DO", 
+            "title": "Ci"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_2/#workflows", 
+            "text": "Deployment \n* Bootstrap OS \n* Preinstall (?) \n* Container Runtime \n* ETCD \n* PKI \n* Kube Masters \n* Kube workers \n* Network \n* DNS  Upgrade \n* Change ansible value \n* Apply changes", 
+            "title": "Workflows"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_2/#notes", 
+            "text": "Upgrade concerns: Drain nodes before maintenance", 
+            "title": "Notes"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_2/#ha", 
+            "text": "ETCD  KubeAPIServer  Runs Nnginx on every master servers (Or Cloud LBs of available)", 
+            "title": "HA"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_2/#scale-tips", 
+            "text": "IOs for ETCD", 
+            "title": "Scale tips"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_2/#next-steps", 
+            "text": "More cloud providers support  K8s e2e tests  Auto-scaling  More add-on providers besides Helm", 
+            "title": "Next steps"
         }
     ]
 }
