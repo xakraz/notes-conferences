@@ -3647,7 +3647,7 @@
         }, 
         {
             "location": "/2018/kubecon/day2/20180503_other-resources/", 
-            "text": "Other resources\n\n\nCNI: \nhttps://schd.ws/hosted_files/kccnceu18/64/Kubernetes-and-the-CNI-Kubecon-218.pdf\n\nKube day2: \nhttps://schd.ws/hosted_files/kccnceu18/fe/Managing%20Kubernetes-Day%202.pdf", 
+            "text": "Other resources\n\n\n\n\nCNI: \nhttps://schd.ws/hosted_files/kccnceu18/64/Kubernetes-and-the-CNI-Kubecon-218.pdf\n\n\nKube day2: \nhttps://schd.ws/hosted_files/kccnceu18/fe/Managing%20Kubernetes-Day%202.pdf\n\n\nBreak and Recover k8s: \nhttps://schd.ws/hosted_files/kccnceu18/b2/%E2%80%9CBreak%20and%20Recover%E2%80%9D%20Kubernetes%20Cluster%20and%20Application.pdf\n\n\nK8s\ns style APIs, the Future: \nhttps://schd.ws/hosted_files/kccnceu18/36/Kubernetes-style%20APIs%20of%20the%20future%20draft%205.pdf\n\n\nMultih Cluster Ingres: ttps://schd.ws/hosted_files/kccnceu18/9e/MultiClusterIngress-ClusterRegistry-Google.pdf\n\n\nAuditLog on k8s usage: \nhttps://kccnceu18.sched.com/event/Dqv4/who-shot-the-cluster-audit-logging-in-kubernetes-marian-lobur-mik-vyatskov-google-intermediate-skill-level", 
             "title": "Other resources"
         }, 
         {
@@ -3697,8 +3697,8 @@
         }, 
         {
             "location": "/2018/kubecon/day2/20180503_talk_2/", 
-            "text": "20180503_talk_1\n\n\n\n\n\n\n\nKubeSpray Introduction\n\n\nk8s\n\n\nGoals\n\n\nRequirements\n\n\nDeployments\n\n\n\n\n\n\nKubespray\n\n\nOverview\n\n\nAnsible playbook\n\n\nApproach\n\n\nCommunity\n\n\nCi\n\n\nWorkflows\n\n\nHA\n\n\nScale tips\n\n\n\n\n\n\nNext steps\n\n\n\n\n\n\n\nKubeSpray Introduction\n\n\nk8s\n\n\nGoals\n\n\n\n\nRun app\n\n\nKeep these running\n\n\nGive resources\n\n\nConnecting them together\n\n\nPublishing services\n\n\n\n\nRequirements\n\n\n\n\nEtcd\n\n\nMasters\n\n\nWorkers\n\n\nContainer Runtime\n\n\nContainer Network\n\n\nPKI\n\n\nStorage\n\n\n\n\nDeployments\n\n\nDivivsive\n\n* Golang vs CfgMgnt\n\n* Orchestration approcaches (do your own)\n\n* CfgMgmt divisions\n\n* Not invented here syndrome\n\n* Reliability and maintenance\n\n\nEcosystem\n\n* Kops (cloud 1st, BareMetal now)\n\n* KubeAdm\n\n* Comercials\n\n\nKubespray\n\n\nOverview\n\n\n\n\nLifecycle manager\n\n\nFlexible and composable\n\n\nProd ready\n\n\nCommunity driven since 2015\n\n\n\n\nAnsible playbook\n\n\n\n\nComprehensive approach with playbooks concepts\n\n\nCovers all componenents\n\n\nReadable\n\n\nFlexible\n\n\nActively maintained\n\n\n\n\nApproach\n\n\n\n\nContainerize everything\n\n\nContainer engine option (Dokcer or rkt)\n\n\nDepoyment options (container-static-pods, Kubeadm, SelfHosted)\n\n\n\n\nCommunity\n\n\nAcvite \n Helpful: 250+ contributors\n\n\nCi\n\n\n\n\n20+ cluster topolgies tested\n\n\nDeploys real clusters\n\n\nRuns n GCE and DO\n\n\n\n\nWorkflows\n\n\nDeployment\n\n* Bootstrap OS\n\n* Preinstall (?)\n\n* Container Runtime\n\n* ETCD\n\n* PKI\n\n* Kube Masters\n\n* Kube workers\n\n* Network\n\n* DNS\n\n\nUpgrade\n\n* Change ansible value\n\n* Apply changes\n\n\n\n\nNotes\n\n\nUpgrade concerns: Drain nodes before maintenance\n\n\n\n\n\n\nHA\n\n\n\n\nETCD\n\n\nKubeAPIServer\n\n\nRuns Nnginx on every master servers (Or Cloud LBs of available)\n\n\n\n\nScale tips\n\n\n\n\nIOs for ETCD\n\n\n\n\nNext steps\n\n\n\n\nMore cloud providers support\n\n\nK8s e2e tests\n\n\nAuto-scaling\n\n\nMore add-on providers besides Helm", 
-            "title": "20180503_talk_1"
+            "text": "20180503_talk_2\n\n\n\n\n\n\n\nKubeSpray Introduction\n\n\nk8s\n\n\nGoals\n\n\nRequirements\n\n\nDeployments\n\n\n\n\n\n\nKubespray\n\n\nOverview\n\n\nAnsible playbook\n\n\nApproach\n\n\nCommunity\n\n\nCi\n\n\nWorkflows\n\n\nHA\n\n\nScale tips\n\n\n\n\n\n\nNext steps\n\n\n\n\n\n\n\nKubeSpray Introduction\n\n\nk8s\n\n\nGoals\n\n\n\n\nRun app\n\n\nKeep these running\n\n\nGive resources\n\n\nConnecting them together\n\n\nPublishing services\n\n\n\n\nRequirements\n\n\n\n\nEtcd\n\n\nMasters\n\n\nWorkers\n\n\nContainer Runtime\n\n\nContainer Network\n\n\nPKI\n\n\nStorage\n\n\n\n\nDeployments\n\n\nDivivsive\n\n* Golang vs CfgMgnt\n\n* Orchestration approcaches (do your own)\n\n* CfgMgmt divisions\n\n* Not invented here syndrome\n\n* Reliability and maintenance\n\n\nEcosystem\n\n* Kops (cloud 1st, BareMetal now)\n\n* KubeAdm\n\n* Comercials\n\n\nKubespray\n\n\nOverview\n\n\n\n\nLifecycle manager\n\n\nFlexible and composable\n\n\nProd ready\n\n\nCommunity driven since 2015\n\n\n\n\nAnsible playbook\n\n\n\n\nComprehensive approach with playbooks concepts\n\n\nCovers all componenents\n\n\nReadable\n\n\nFlexible\n\n\nActively maintained\n\n\n\n\nApproach\n\n\n\n\nContainerize everything\n\n\nContainer engine option (Dokcer or rkt)\n\n\nDepoyment options (container-static-pods, Kubeadm, SelfHosted)\n\n\n\n\nCommunity\n\n\nAcvite \n Helpful: 250+ contributors\n\n\nCi\n\n\n\n\n20+ cluster topolgies tested\n\n\nDeploys real clusters\n\n\nRuns n GCE and DO\n\n\n\n\nWorkflows\n\n\nDeployment\n\n* Bootstrap OS\n\n* Preinstall (?)\n\n* Container Runtime\n\n* ETCD\n\n* PKI\n\n* Kube Masters\n\n* Kube workers\n\n* Network\n\n* DNS\n\n\nUpgrade\n\n* Change ansible value\n\n* Apply changes\n\n\n\n\nNotes\n\n\nUpgrade concerns: Drain nodes before maintenance\n\n\n\n\n\n\nHA\n\n\n\n\nETCD\n\n\nKubeAPIServer\n\n\nRuns Nnginx on every master servers (Or Cloud LBs of available)\n\n\n\n\nScale tips\n\n\n\n\nIOs for ETCD\n\n\n\n\nNext steps\n\n\n\n\nMore cloud providers support\n\n\nK8s e2e tests\n\n\nAuto-scaling\n\n\nMore add-on providers besides Helm", 
+            "title": "20180503_talk_2"
         }, 
         {
             "location": "/2018/kubecon/day2/20180503_talk_2/#kubespray-introduction", 
@@ -3779,6 +3779,146 @@
             "location": "/2018/kubecon/day2/20180503_talk_2/#next-steps", 
             "text": "More cloud providers support  K8s e2e tests  Auto-scaling  More add-on providers besides Helm", 
             "title": "Next steps"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_3/", 
+            "text": "20180503_talk_3\n\n\n\n\n\n\n\nGitOps for Istio\n\n\nGitOps\n\n\nIstio\n\n\nOverview\n\n\nGitOps for Istio\n\n\nConfigSets\n\n\n\n\n\n\n\n\n\n\n\nGitOps for Istio\n\n\nGitOps\n\n\nConcepts\n\n* Config is code\n\n* Code must be Version controlled\n\n* Config must be version controlled also\n\n\nGit as a source of truth\n\n\nTips: Build \ndiff\n tools to compare current \n desired states\n\n\nGitOps workflow:\n\n* 1 repo /app\n\n* Separate branch per env\n\n* Push changes to feature branch first\n\n* Rollout with Merge\n\n\nSummary:\n\n* Declarative config\n\n* All changes go throught vcm (no \nkubectl\n actions any more)\n\n* Use operators in clusters to drive the observed cluster state to the desired state\n\n\nBenefits:\n\n* Atomic, Audit logs and rollback capabilities\n\n* Config and Images push 1st acts as Firewall\n\n* Team work: No single and alone actions\n\n\nTools\n\n* JenkinsX\n\n* GitKube\n\n\nIstio\n\n\nOverview\n\n\n\n\nDedicated, programable Layer\n\n\n\n\nGitOps for Istio\n\n\n\n\nWorkFlow picture\n\n\n\n\nConfigSets\n\n\nTraffic Mgmt\n\n- Canary release\n\n- Rate limiting\n\n- Ingress\n\n-\n Network Admins\n\n\nObservability\n\n- Metrics (What kind, which backend)\n\n- Default config\n\n-\n SRE \n DevOps\n\n\nSecurity\n\n- Authz\n\n-\n SecOps\n\n\nApp performances\n\n- Retries\n\n- TimeOuts\n\n- FaultInjections\n\n- CircuitBreaker\n\n-\n Devs\n\n\n=\n Tool for collaboration", 
+            "title": "20180503_talk_3"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_3/#gitops-for-istio", 
+            "text": "", 
+            "title": "GitOps for Istio"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_3/#gitops", 
+            "text": "Concepts \n* Config is code \n* Code must be Version controlled \n* Config must be version controlled also  Git as a source of truth  Tips: Build  diff  tools to compare current   desired states  GitOps workflow: \n* 1 repo /app \n* Separate branch per env \n* Push changes to feature branch first \n* Rollout with Merge  Summary: \n* Declarative config \n* All changes go throught vcm (no  kubectl  actions any more) \n* Use operators in clusters to drive the observed cluster state to the desired state  Benefits: \n* Atomic, Audit logs and rollback capabilities \n* Config and Images push 1st acts as Firewall \n* Team work: No single and alone actions  Tools \n* JenkinsX \n* GitKube", 
+            "title": "GitOps"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_3/#istio", 
+            "text": "", 
+            "title": "Istio"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_3/#overview", 
+            "text": "Dedicated, programable Layer", 
+            "title": "Overview"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_3/#gitops-for-istio_1", 
+            "text": "WorkFlow picture", 
+            "title": "GitOps for Istio"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_3/#configsets", 
+            "text": "Traffic Mgmt \n- Canary release \n- Rate limiting \n- Ingress \n-  Network Admins  Observability \n- Metrics (What kind, which backend) \n- Default config \n-  SRE   DevOps  Security \n- Authz \n-  SecOps  App performances \n- Retries \n- TimeOuts \n- FaultInjections \n- CircuitBreaker \n-  Devs  =  Tool for collaboration", 
+            "title": "ConfigSets"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_4/", 
+            "text": "20180503_talk_4\n\n\n\n\n\n\n\nK8s Multicluster without Fed\n\n\nOverview\n\n\nMulti-clusters\n\n\nFederation\n\n\n\n\n\n\nBreak up the pb\n\n\nExpectations\n\n\nExisting resources\n\n\n\n\n\n\nBring your own worflows\n\n\nUsage expectations\n\n\n\n\n\n\nTectonic Multi-clusters\n\n\nBased on\n\n\nExample\n\n\nMore specialized software\n\n\n\n\n\n\n\n\n\n\n\nK8s Multicluster without Fed\n\n\nOverview\n\n\nMulti-clusters\n\n\n\n\nMultiCloud\n\n\nMultiRegion\n\n\nclusters / teams\n\n\nclusters / ....\n\n\n\n\n\n\nHard to maintain and manage\n\n\nFederation\n\n\nIdea:\n\n* Federation API Server\n\n* Above API servers\n\n* \n\n\nIssues ?\n\n* Security\n\n* Operations\n\n  - FederationApiServer is a full controlplane\n\n  - Need HA, but \netcd\n accross wan is not recommanded\n\n\n=\n Complicated\n\n\nBreak up the pb\n\n\nExpectations\n\n\nApp Owner POV\n\n* CI/CD for my App\n\n* Cluster discovery\n\n* Hope failover between clusters\n\n* Credentials mgmt ?\n\n\nInfra Admin POV\n\n* Connect and track clusters\n\n* Ensure overall security\n\n* Lock down\n\n* Resources Mgmt\n\n\n/!\\ about muti-tenant clusters\n\n  -\n BEWARE of resources exhaustion\n\n\nExisting resources\n\n\nCluster Registry (Tectonic)\n\n* \nkubectl get clusters\n\n\n-\n Is CRD\n\n-\n BUT Lives on 1 cluster, Need to mesh them \n\n\nAccessControl\n\n* Users\n\n  - Apps Owners\n\n  - Enginner\n\n  - SRE\n\n  - Bots\n\n* Stages / Environment\n\n\n-\n Hard with policies\n\n\nBring your own worflows\n\n\nUsage expectations\n\n\nApps \n Config: same concerns:\n\n* CI / CD\n\n* Deployment policy ?\n\n\nApps Owner:\n\n* version\n\n* Config \n secrets\n\n\nSRE\n\n* RBACs\n\n\nTectonic Multi-clusters\n\n\nBased on\n\n\nClusterRegistry\n\n* Sync to all clusters\n\n* USe registry as selector for polyc\n\n\nSync Policy\n\n* Agent running on cluster\n\n* Focus on RBAC\n\n* CRUD namespaces\n\n* Updated immediately across clusters\n\n\nkind: ClusterPolicy\n\n\n\n\nExample\n\n\n\n\n\n\n\n\nCluster registry\n\n\n\n\n\n\n\n\n\n\nRegions1\n\n\n\n\n\n\n---------------------------------\n\n\n\n\n\n\nProd\n\n\n\n\n\n\n---------------------------------\n\n\n\n\n\n\nCommon Roles and Bindings\n\n\n\n\n\n\n\n\nBetter Security:\n\n* No cluster need to access all clusters\n\n* ServiceAccounts can be audited and revoked\n\n* ServiceAccounts only ready Clusters and ClusterPolicy\n\n\nMore specialized software\n\n\nLeast complex\n\n* Bash script\n\n* Jenkins\n\n\nMore Complex\n\n* Operatos\n\n  ++ Specialized controller for an app\n\n  ++ Model apps using CRDs\n\n  ++ Use native k8s objetcs and concepts\n\n  \n Requires k8s native app\n\n\nSmarter\n\n* Federationv2\n\n  \n This is a vast problem space\n\n  ++ Don\nt have to use all parts\n\n  ++ Polices are modeled\n\n  -\n Implemented as Aggregated API\n\n  -\n Secured with ServiceAccounts\n\n  -\n Will be possible to write custom scheduler", 
+            "title": "20180503_talk_4"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_4/#k8s-multicluster-without-fed", 
+            "text": "", 
+            "title": "K8s Multicluster without Fed"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_4/#overview", 
+            "text": "", 
+            "title": "Overview"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_4/#multi-clusters", 
+            "text": "MultiCloud  MultiRegion  clusters / teams  clusters / ....    Hard to maintain and manage", 
+            "title": "Multi-clusters"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_4/#federation", 
+            "text": "Idea: \n* Federation API Server \n* Above API servers \n*   Issues ? \n* Security \n* Operations \n  - FederationApiServer is a full controlplane \n  - Need HA, but  etcd  accross wan is not recommanded  =  Complicated", 
+            "title": "Federation"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_4/#break-up-the-pb", 
+            "text": "", 
+            "title": "Break up the pb"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_4/#expectations", 
+            "text": "App Owner POV \n* CI/CD for my App \n* Cluster discovery \n* Hope failover between clusters \n* Credentials mgmt ?  Infra Admin POV \n* Connect and track clusters \n* Ensure overall security \n* Lock down \n* Resources Mgmt  /!\\ about muti-tenant clusters \n  -  BEWARE of resources exhaustion", 
+            "title": "Expectations"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_4/#existing-resources", 
+            "text": "Cluster Registry (Tectonic) \n*  kubectl get clusters  -  Is CRD \n-  BUT Lives on 1 cluster, Need to mesh them   AccessControl \n* Users \n  - Apps Owners \n  - Enginner \n  - SRE \n  - Bots \n* Stages / Environment  -  Hard with policies", 
+            "title": "Existing resources"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_4/#bring-your-own-worflows", 
+            "text": "", 
+            "title": "Bring your own worflows"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_4/#usage-expectations", 
+            "text": "Apps   Config: same concerns: \n* CI / CD \n* Deployment policy ?  Apps Owner: \n* version \n* Config   secrets  SRE \n* RBACs", 
+            "title": "Usage expectations"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_4/#tectonic-multi-clusters", 
+            "text": "", 
+            "title": "Tectonic Multi-clusters"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_4/#based-on", 
+            "text": "ClusterRegistry \n* Sync to all clusters \n* USe registry as selector for polyc  Sync Policy \n* Agent running on cluster \n* Focus on RBAC \n* CRUD namespaces \n* Updated immediately across clusters  kind: ClusterPolicy", 
+            "title": "Based on"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_4/#example", 
+            "text": "Cluster registry      Regions1    ---------------------------------    Prod    ---------------------------------    Common Roles and Bindings     Better Security: \n* No cluster need to access all clusters \n* ServiceAccounts can be audited and revoked \n* ServiceAccounts only ready Clusters and ClusterPolicy", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_4/#more-specialized-software", 
+            "text": "Least complex \n* Bash script \n* Jenkins  More Complex \n* Operatos \n  ++ Specialized controller for an app \n  ++ Model apps using CRDs \n  ++ Use native k8s objetcs and concepts \n    Requires k8s native app  Smarter \n* Federationv2 \n    This is a vast problem space \n  ++ Don t have to use all parts \n  ++ Polices are modeled \n  -  Implemented as Aggregated API \n  -  Secured with ServiceAccounts \n  -  Will be possible to write custom scheduler", 
+            "title": "More specialized software"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_5/", 
+            "text": "20180503_talk_5\n\n\n\n\n\n\n\nClusters as cattle\n\n\nProvision k8s clusters\n\n\nApps migration\n\n\nStack desc\n\n\nDemo\n\n\n\n\n\n\nLinks\n\n\n\n\n\n\n\nClusters as cattle\n\n\nProvision k8s clusters\n\n\nExample: Ansible + Kubeadm\n\n\nApps migration\n\n\nStack desc\n\n\nCan not pin apps to specifuc lsuters for ever\n\n\nStack\n\n* Routing cluster (Countour + Envoy as daemonsets)\n\n* Clusters 1 and 2 for App workloads\n\n\nDemo\n\n\nPrepare Migration\n\n* Use tool \nark\n: \nark backup create NAME ...\n\n* Spin-up a new cluster\n\n* Apply backup with \nkubectl apply -f BACKUP_DIR/\n\n\nAdd cluster 2 to the Router backend:\n\n\nns: demo\nname: app1\nannotations:\n- weight.app1-cluster1: 100\n- weight.app1-cluster2: 0\n- weighted_cluster: True\n...\n\n\n\nLinks\n\n\n\n\nBackup: \nhttps://github.com/heptio/ark\n\n\nIngress Controller: \nhttps://github.com/heptio/contour\n\n\nProxy: \nhttps://github.com/envoyproxy/envoy\n\n\n\n\nOR : \nhttps://github.com/heptio/gimbal", 
+            "title": "20180503_talk_5"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_5/#clusters-as-cattle", 
+            "text": "", 
+            "title": "Clusters as cattle"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_5/#provision-k8s-clusters", 
+            "text": "Example: Ansible + Kubeadm", 
+            "title": "Provision k8s clusters"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_5/#apps-migration", 
+            "text": "", 
+            "title": "Apps migration"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_5/#stack-desc", 
+            "text": "Can not pin apps to specifuc lsuters for ever  Stack \n* Routing cluster (Countour + Envoy as daemonsets) \n* Clusters 1 and 2 for App workloads", 
+            "title": "Stack desc"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_5/#demo", 
+            "text": "Prepare Migration \n* Use tool  ark :  ark backup create NAME ... \n* Spin-up a new cluster \n* Apply backup with  kubectl apply -f BACKUP_DIR/  Add cluster 2 to the Router backend:  ns: demo\nname: app1\nannotations:\n- weight.app1-cluster1: 100\n- weight.app1-cluster2: 0\n- weighted_cluster: True\n...", 
+            "title": "Demo"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_talk_5/#links", 
+            "text": "Backup:  https://github.com/heptio/ark  Ingress Controller:  https://github.com/heptio/contour  Proxy:  https://github.com/envoyproxy/envoy   OR :  https://github.com/heptio/gimbal", 
+            "title": "Links"
         }
     ]
 }
