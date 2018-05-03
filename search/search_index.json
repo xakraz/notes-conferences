@@ -3544,6 +3544,106 @@
             "location": "/2018/kubecon/day1/20180502_talk_4/#54-other-issues-notes", 
             "text": "Flannel store config in ETCD  Took down internal docker registry, while updating too many nodes that did not have every images locally ....", 
             "title": "5.4 - Other Issues notes"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_keynote_1/", 
+            "text": "20180503_keynote_1\n\n\n\n\n\n\n\n1 - Sandboxed Containers\n\n\n2 - Applications\n\n\n3 - Monitoring\n\n\n4 - Dev UX\n\n\n\n\n\n\n\nGoogle Cloud updates\n\n\n1 - Sandboxed Containers\n\n\ngVisor\n: \nhttps://cloudplatform.googleblog.com/2018/05/Open-sourcing-gVisor-a-sandboxed-container-runtime.html\n\n\nCompatible with Docker and k8s\n\n\n2 - Applications\n\n\n\n\n Batch workload \n CronJob \n Spark (beta) in \n1.8\n\n\n Workload Controllers + Local Storage\n\n\n GPUs support in \n1.9\n\n\n StatefullSet\n\n\n\n\nNow : Statefull applications\n\n\n-\n \noperators\n\n\nOperatots:\n\n* leverage k8s API\n\n\nDemo: Spark Operator on GKE\n\n* Operator introduce new \nKind\n in k8s Manifests\n\n* Creates a \nspark-driver\n + \nspark-executors\n Pods\n\n\n3 - Monitoring\n\n\n4 - Dev UX\n\n\n\n\nSource Code\n\n\nBuild\n\n\nDeploy\n\n\nRun\n\n\n\n\nSo many steps between Devs and actual run in the process, Devs do not really interact with k8s \n\n\nCountinuous Developpement ?\n\n\n-\n New OpenSource project: \nSkaffold", 
+            "title": "20180503_keynote_1"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_keynote_1/#1-sandboxed-containers", 
+            "text": "gVisor :  https://cloudplatform.googleblog.com/2018/05/Open-sourcing-gVisor-a-sandboxed-container-runtime.html  Compatible with Docker and k8s", 
+            "title": "1 - Sandboxed Containers"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_keynote_1/#2-applications", 
+            "text": "Batch workload   CronJob   Spark (beta) in  1.8   Workload Controllers + Local Storage   GPUs support in  1.9   StatefullSet   Now : Statefull applications  -   operators  Operatots: \n* leverage k8s API  Demo: Spark Operator on GKE \n* Operator introduce new  Kind  in k8s Manifests \n* Creates a  spark-driver  +  spark-executors  Pods", 
+            "title": "2 - Applications"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_keynote_1/#3-monitoring", 
+            "text": "", 
+            "title": "3 - Monitoring"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_keynote_1/#4-dev-ux", 
+            "text": "Source Code  Build  Deploy  Run   So many steps between Devs and actual run in the process, Devs do not really interact with k8s   Countinuous Developpement ?  -  New OpenSource project:  Skaffold", 
+            "title": "4 - Dev UX"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_keynote_2/", 
+            "text": "20180503_keynote_2\n\n\n\n\n\n\n\n1 - Operators\n\n\n2 - Operators Framework\n\n\n\n\n\n\n\nK8s Applications\n\n\n1 - Operators\n\n\nLast year: Introduction of Operators principles\n\n\nFeedbacks:\n\n\n\n\nPrometheus Operator allows DevTeams and SRE TEams to provision end-to-end monitoring for Apps\n\n\n\n\n\n\n2 - Operators Framework\n\n\nIntroduced this week:\n\n- \nhttps://coreos.com/blog/introducing-operator-framework\n\n- \nhttps://github.com/operator-framework\n\n- SDK, Lifecycle Managers, and Metering\n\n\nLifecycle Managers:\n\n* Maintains catalog of Operatos", 
+            "title": "20180503_keynote_2"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_keynote_2/#1-operators", 
+            "text": "Last year: Introduction of Operators principles  Feedbacks:   Prometheus Operator allows DevTeams and SRE TEams to provision end-to-end monitoring for Apps", 
+            "title": "1 - Operators"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_keynote_2/#2-operators-framework", 
+            "text": "Introduced this week: \n-  https://coreos.com/blog/introducing-operator-framework \n-  https://github.com/operator-framework \n- SDK, Lifecycle Managers, and Metering  Lifecycle Managers: \n* Maintains catalog of Operatos", 
+            "title": "2 - Operators Framework"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_keynote_3/", 
+            "text": "20180503_keynote_3\n\n\n\n\n\n\n\n1 - Journey\n\n\n2 - Decisions\n\n\n3 - Migrating\n\n\n4 - CCL\n\n\n\n\n\n\n\nMigrating to k8s from the Finanicial Times\n\n\n1 - Journey\n\n\nChallenge is when you start with Existing services, and not starting from scratch\n\n\nWhy change ?\n\n* Hand rolled Docker in Prod mid 2015\n\n* Spend your innovation tokens wisely\n\n* Estimated cost reduction: 80% of EC2\n\n\nBUT\n\n* Many fewer steps to start running a new service in Prod \n\n* Doc challenge to know current running app\n\n* Choose boting tech (Etsy blog post)\n\n\nWARNING\n\n* The FT is not a cluster operations teams\n\n* Metrics for success:\n\n  - Amount of time spent keeping cluster healthy\n\n\n2 - Decisions\n\n\nBe confortable with change, don\nt scare makine bad descision.\n\nNowadays we now how to measure fast failure to change the plan\n\n\n3 - Migrating\n\n\nRunning train:\n\n* Do things in parallel \n (2 stacks)\n\n\nNotes:\n\n* Branch vs if/else\n\n  - Branch is very difficult to maintain\n\n  - If/else: you deploy on your living stack stuff for the new stack \n\n* Separate deployment mechanism / same tool\n\n  - Same than branches \n\n\nWarning:\n\n* Doing things in parallel takes time and money\n\n\n4 - CCL\n\n\n\n\nWe did not start from the easier starting point\n\n\nWe did not end where we thought\n\n\n\n\n-\n At some point ask your self if you are happy with the system and settle :)", 
+            "title": "20180503_keynote_3"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_keynote_3/#1-journey", 
+            "text": "Challenge is when you start with Existing services, and not starting from scratch  Why change ? \n* Hand rolled Docker in Prod mid 2015 \n* Spend your innovation tokens wisely \n* Estimated cost reduction: 80% of EC2  BUT \n* Many fewer steps to start running a new service in Prod  \n* Doc challenge to know current running app \n* Choose boting tech (Etsy blog post)  WARNING \n* The FT is not a cluster operations teams \n* Metrics for success: \n  - Amount of time spent keeping cluster healthy", 
+            "title": "1 - Journey"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_keynote_3/#2-decisions", 
+            "text": "Be confortable with change, don t scare makine bad descision. \nNowadays we now how to measure fast failure to change the plan", 
+            "title": "2 - Decisions"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_keynote_3/#3-migrating", 
+            "text": "Running train: \n* Do things in parallel   (2 stacks)  Notes: \n* Branch vs if/else \n  - Branch is very difficult to maintain \n  - If/else: you deploy on your living stack stuff for the new stack  \n* Separate deployment mechanism / same tool \n  - Same than branches   Warning: \n* Doing things in parallel takes time and money", 
+            "title": "3 - Migrating"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_keynote_3/#4-ccl", 
+            "text": "We did not start from the easier starting point  We did not end where we thought   -  At some point ask your self if you are happy with the system and settle :)", 
+            "title": "4 - CCL"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_keynote_5/", 
+            "text": "20180503_keynote_5\n\n\n\n\n\n\n\n1 - About Spotify\n\n\n2 - How to get Started\n\n\n3 - Support\n\n\n4 - Guidance\n\n\n5 - Let\ns do better\n\n\nCCL\n\n\n\n\n\n\n\nSoftware\ns community\n\n\n\n\nby Spotify\n\n\n\n\n1 - About Spotify\n\n\n\n\nWokring with community\n\n\nWe are not OpenSource shop like RedHat\n\n\nMoving to the cloud\n\n\n\n\n2 - How to get Started\n\n\nFear:\n\n* I don\nt do amazing stuff\n\n* Who wants to know about the stuff we do\n\n\nJust start to\n\n* share stories,\n\n* build relationship with other users\n\n\nWhy:\n\n* Getting support\n\n* Getting iead about products\n\n\n3 - Support\n\n\n\n\nGithub is an amazing platform to share, looks at issues, pace, contributors\n\n\nNow, look at Slack\n\n\n\n\n4 - Guidance\n\n\nCommunity is a tremendous source of guidance.\n\n* What exists today\n\n* What works best with the other software\n\n* What are other people doing with these tools\n\n* \n\n\n5 - Let\ns do better\n\n\nDoing something is hard, doing it alone is even harder.\n\n\nCCL\n\n\nThe \nfraud syndrome", 
+            "title": "20180503_keynote_5"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_keynote_5/#1-about-spotify", 
+            "text": "Wokring with community  We are not OpenSource shop like RedHat  Moving to the cloud", 
+            "title": "1 - About Spotify"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_keynote_5/#2-how-to-get-started", 
+            "text": "Fear: \n* I don t do amazing stuff \n* Who wants to know about the stuff we do  Just start to \n* share stories, \n* build relationship with other users  Why: \n* Getting support \n* Getting iead about products", 
+            "title": "2 - How to get Started"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_keynote_5/#3-support", 
+            "text": "Github is an amazing platform to share, looks at issues, pace, contributors  Now, look at Slack", 
+            "title": "3 - Support"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_keynote_5/#4-guidance", 
+            "text": "Community is a tremendous source of guidance. \n* What exists today \n* What works best with the other software \n* What are other people doing with these tools \n*", 
+            "title": "4 - Guidance"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_keynote_5/#5-lets-do-better", 
+            "text": "Doing something is hard, doing it alone is even harder.", 
+            "title": "5 - Let's do better"
+        }, 
+        {
+            "location": "/2018/kubecon/day2/20180503_keynote_5/#ccl", 
+            "text": "The  fraud syndrome", 
+            "title": "CCL"
         }
     ]
 }
