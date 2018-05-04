@@ -4142,8 +4142,73 @@
         }, 
         {
             "location": "/2018/kubecon/day3/20180504_talk_5/", 
-            "text": "20180504_talk_5\n\n\n\n\n\n\n\nAWS EKS\n\n\n\n\n\n\n\nAWS EKS", 
+            "text": "20180504_talk_5\n\n\n\n\n\n\n\nBaremetal k8s\n\n\nIntro\n\n\nWikimedia\n\n\nReason for k8s\n\n\nWhy BareMetal ?\n\n\n\n\n\n\nCluster setup\n\n\n1 - Setup\n\n\n2 - Infra resources\n\n\n3 - Sec\n\n\n\n\n\n\nIntegration\n\n\nNetwork\n\n\nMetrics\n\n\nAlerting\n\n\n\n\n\n\nApp dpeloyments\n\n\n\n\n\n\n\nBaremetal k8s\n\n\nIntro\n\n\nWikimedia\n\n\n\n\n2 Primary DCs\n\n\nCaching DCs\n\n\nGaneti cluster with VMs\n\n\n\n\n\n\nReason for k8s\n\n\n\n\n2014: 2 Main product\n\n\n2018: Micro Services\n\n\n\n\nAlso\n\n+ Elasticity\n\n+ Node failure Mgmt\n\n+ Containers\n\n+ Empower Devs\n\n\nBUT new challenges\n\n* More moving parts\n\n* New paradigms\n\n* Containers\n\n\nWhy BareMetal ?\n\n\nNo Public cloud:\n\n* User\ns privacy\n\n* Already having the infra\n\n* Costs\n\n\nNo private cloud:\n\n* We run k8s on OpenStack for other projects\n\n* Reducing movng parts (OpenStack is a massive moving part)\n\n* No practivcal advantages for production services\n\n\nCluster setup\n\n\n1 - Setup\n\n\nWe build debs packages\n\n* k8s 1.7\n\n* calico\n\n* Etcd 2.2.1\n\n\nConfigure with Puppet\n\n* TLS included\n\n* but NOT the k8s resources\n\n\nAPI servers HA\n\n* 2 per cluster\n\n\n2 - Infra resources\n\n\n\n\n2 Prod clusters + 1 Staging\n\n\nSperated \nETCD\n clusters (3 servers, DC Local, on Ganeti VMs)\n\n\nKube-proxy\n in iptables mode\n\n\nDocker as runtime BUT interested in rkt\n\n\nWe host ourown registry (No docker hub)\n\n\nWe rebuild our image from scratch\n\n\nBackend on Swift\n\n\n\n\n3 - Sec\n\n\n\n\nRBAC enabled since day1\n\n\n1 namespace / app\n\n\nToken-auth\n\n\nStandard adminission controllers\n\n\nFirewalling enabled on all nodes via \nferm\n\n\nThis works better than we thought\n\n\n\n\nIntegration\n\n\nNetwork\n\n\nTopologie\n\n* Racks + TORs\n\n* 2 swicthes / Racks Row\n\n* 2 Routers\n\n\nOthers\n\n* Machines are distributed per rack row for redondency\n\n* For backward compatibility, avoid overlay network\n\n* Calico BGP speakers on every node and the 2 routers\n\n* No BGP Full mesh\n\n* Pods have ipv6 thanks to Calico\n\n\nNetwork Policies\n\n* We use\n\n\nIngress\n\n* Evaludated but not used yet\n\n* USe in house python daemon running on LB (\nPyBal\n: \nhttps://github.com/wikimedia/PyBal\n)\n\n  - NodePort with ExternalIPs\n\n  - \nPyBal\n manages LVS DR entries on the lb\n\n\nMetrics\n\n\nInfra with Prometheus\n\n* Polling all APIservers\n\n* Polling all Kubelets\n\n* Polling kubelets cAdvisor\n\n* Discovery mechanisms RULES !\n\n\nApplications with Prometheus too !\n\n\nAlerting\n\n\n\n\nIcinga 1.11.6 + Shell script checker against prometheus\n\n\nMoving to \nhttps://github.com/wikimedia/operations-software-service-checker\n\n\n\n\nApp dpeloyments\n\n\nHelm\n\n* \ntiller\n on each app namespace with specific RBAC\n\n* A \ndeploy\n user is allowed to speak to \ntiller\n\n* Wrapper shell script around Helm (shamefull) for kind of \nfederation\n\n\nDeploy\n\n* On both DCs\n\n* 2 Helms releases: \nCanary\n and \nProduction\n\n* Only Production declares services\n\n* Deploy Canary, do tests and check metrics (Automated), then go Production", 
             "title": "20180504 talk 5"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_5/#intro", 
+            "text": "", 
+            "title": "Intro"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_5/#wikimedia", 
+            "text": "2 Primary DCs  Caching DCs  Ganeti cluster with VMs", 
+            "title": "Wikimedia"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_5/#reason-for-k8s", 
+            "text": "2014: 2 Main product  2018: Micro Services   Also \n+ Elasticity \n+ Node failure Mgmt \n+ Containers \n+ Empower Devs  BUT new challenges \n* More moving parts \n* New paradigms \n* Containers", 
+            "title": "Reason for k8s"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_5/#why-baremetal", 
+            "text": "No Public cloud: \n* User s privacy \n* Already having the infra \n* Costs  No private cloud: \n* We run k8s on OpenStack for other projects \n* Reducing movng parts (OpenStack is a massive moving part) \n* No practivcal advantages for production services", 
+            "title": "Why BareMetal ?"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_5/#cluster-setup", 
+            "text": "", 
+            "title": "Cluster setup"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_5/#1-setup", 
+            "text": "We build debs packages \n* k8s 1.7 \n* calico \n* Etcd 2.2.1  Configure with Puppet \n* TLS included \n* but NOT the k8s resources  API servers HA \n* 2 per cluster", 
+            "title": "1 - Setup"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_5/#2-infra-resources", 
+            "text": "2 Prod clusters + 1 Staging  Sperated  ETCD  clusters (3 servers, DC Local, on Ganeti VMs)  Kube-proxy  in iptables mode  Docker as runtime BUT interested in rkt  We host ourown registry (No docker hub)  We rebuild our image from scratch  Backend on Swift", 
+            "title": "2 - Infra resources"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_5/#3-sec", 
+            "text": "RBAC enabled since day1  1 namespace / app  Token-auth  Standard adminission controllers  Firewalling enabled on all nodes via  ferm  This works better than we thought", 
+            "title": "3 - Sec"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_5/#integration", 
+            "text": "", 
+            "title": "Integration"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_5/#network", 
+            "text": "Topologie \n* Racks + TORs \n* 2 swicthes / Racks Row \n* 2 Routers  Others \n* Machines are distributed per rack row for redondency \n* For backward compatibility, avoid overlay network \n* Calico BGP speakers on every node and the 2 routers \n* No BGP Full mesh \n* Pods have ipv6 thanks to Calico  Network Policies \n* We use  Ingress \n* Evaludated but not used yet \n* USe in house python daemon running on LB ( PyBal :  https://github.com/wikimedia/PyBal ) \n  - NodePort with ExternalIPs \n  -  PyBal  manages LVS DR entries on the lb", 
+            "title": "Network"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_5/#metrics", 
+            "text": "Infra with Prometheus \n* Polling all APIservers \n* Polling all Kubelets \n* Polling kubelets cAdvisor \n* Discovery mechanisms RULES !  Applications with Prometheus too !", 
+            "title": "Metrics"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_5/#alerting", 
+            "text": "Icinga 1.11.6 + Shell script checker against prometheus  Moving to  https://github.com/wikimedia/operations-software-service-checker", 
+            "title": "Alerting"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_5/#app-dpeloyments", 
+            "text": "Helm \n*  tiller  on each app namespace with specific RBAC \n* A  deploy  user is allowed to speak to  tiller \n* Wrapper shell script around Helm (shamefull) for kind of  federation  Deploy \n* On both DCs \n* 2 Helms releases:  Canary  and  Production \n* Only Production declares services \n* Deploy Canary, do tests and check metrics (Automated), then go Production", 
+            "title": "App dpeloyments"
         }
     ]
 }
