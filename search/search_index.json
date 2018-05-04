@@ -3919,6 +3919,231 @@
             "location": "/2018/kubecon/day2/20180503_talk_5/#links", 
             "text": "Backup:  https://github.com/heptio/ark  Ingress Controller:  https://github.com/heptio/contour  Proxy:  https://github.com/envoyproxy/envoy   OR :  https://github.com/heptio/gimbal", 
             "title": "Links"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_keynote_1/", 
+            "text": "20180504_keynote_1\n\n\n\n\n\n\n\nRunning with scissors\n\n\n\n\n\n\n\nRunning with scissors\n\n\nRunning with privileges without remembering why we got it is kind of running with scissors", 
+            "title": "20180504_keynote_1"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_keynote_1/#running-with-scissors", 
+            "text": "Running with privileges without remembering why we got it is kind of running with scissors", 
+            "title": "Running with scissors"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_1/", 
+            "text": "20180504_talk_1\n\n\n\n\n\n\n\ne2e testing with KubeCtl\n\n\nEnd 2 End ?\n\n\nLitmus\n\n\n\n\n\n\n\ne2e testing with KubeCtl\n\n\nEnd 2 End ?\n\n\n\n\nHow does it help the users ?\n\n\n\n\nLitmus\n\n\nCucumber style, plain natural language tests definitions", 
+            "title": "20180504_talk_1"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_1/#e2e-testing-with-kubectl", 
+            "text": "", 
+            "title": "e2e testing with KubeCtl"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_1/#end-2-end", 
+            "text": "How does it help the users ?", 
+            "title": "End 2 End ?"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_1/#litmus", 
+            "text": "Cucumber style, plain natural language tests definitions", 
+            "title": "Litmus"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_2/", 
+            "text": "20180504_talk_2\n\n\n\n\n\n\n\nWhat \nproduction ready\n does really mean ?\n\n\n1 - Production ready def\n\n\n2 - Prod ready factors\n\n\n3 - HA\n\n\n4 - Security\n\n\n5 - Deny by default (sec Bestpractices)\n\n\n6 - Kubeadm\n\n\n7 - ClusterAPI\n\n\nRecap\n\n\n\n\n\n\n\nWhat \nproduction ready\n does really mean ?\n\n\nNote: This talk is focused on k8s layer, not provision, not app deployment\n\n\n1 - Production ready def\n\n\nGood \nenought\n for user to server real-world traffic\n\n\n\n\nYour offering is prod ready whent it exceed what your users expect\n\n- Google def\n\n\n\n\n\n\nIt is all about tradeoffs\n\n\n2 - Prod ready factors\n\n\n\n\nReasonable\n secure (you can spend a lifetime trying to secure your cluster)\n\n\nHA \nenought\n for the usage\n\n\nEvery components are \ndeclaratively controlled\n\n\nChanges to the cluster state can be \nsafely\n applied\n\n\nCluster pass e2e tests from CNCF\n\n\n\n\n3 - HA\n\n\n\n\nk8s components can fail without causing the cluster to fail\n\n\nMahines can fail without causing the cluster to fail\n\n\n\n\n4 - Security\n\n\nTLS\n communication everywhere\n\n* Use anexternal PKI provider\n\n\nAPI AuthN \n AuthZ\n\n* \nDisable\n anonymous auth on localhost\n\n* Enforce \nRBAC\n and \nNodeAuthorizers\n\n\nKueblet lockdown\n\n* Kueblet should have uniq ID\n\n* Disable readonly, public and cAdvisor ports\n\n-\n Should be disabled in 1.11\n\n\nDashboard \n Helm\n\n* Whitelist explict operations for \ntiler\n\n* Don\nt give \ncluster-admin\n to everyones\n\n-\n Has auth since 1.7\n\n\n5 - Deny by default (sec Bestpractices)\n\n\nDeny by default\n\n* RBAC\n\n* NetworkPolicy\n\n* \nrestrictive\n PodSecurityPoicy\n\n\n6 - Kubeadm\n\n\nHA with Kubeadm\n\n* \nkubeadm init\n on each Master node + LB for API servers\n\n* \nkubeadm join\n on each Worker node\n\n\nTips:\n\n* Hosts admin and controlPlan resources on the masters nodes\n\n* Use \nPod anti-affinity\n\n* Prometheus \nkube-state-metrics\n\n* Define SLI, SLO and SLA\n\n\n7 - ClusterAPI\n\n\nFeatures:\n\n* Upgrade\n\n* Auto-repair\n\n* Cluster autoscale\n\n\nRecap\n\n\n\n\nPay attention to your need\n\n\nHA != MultiMaster\n\n\nPKI is important\n\n\nDeclarative control is better", 
+            "title": "20180504_talk_2"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_2/#what-production-ready-does-really-mean", 
+            "text": "Note: This talk is focused on k8s layer, not provision, not app deployment", 
+            "title": "What \"production ready\" does really mean ?"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_2/#1-production-ready-def", 
+            "text": "Good  enought  for user to server real-world traffic   Your offering is prod ready whent it exceed what your users expect \n- Google def    It is all about tradeoffs", 
+            "title": "1 - Production ready def"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_2/#2-prod-ready-factors", 
+            "text": "Reasonable  secure (you can spend a lifetime trying to secure your cluster)  HA  enought  for the usage  Every components are  declaratively controlled  Changes to the cluster state can be  safely  applied  Cluster pass e2e tests from CNCF", 
+            "title": "2 - Prod ready factors"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_2/#3-ha", 
+            "text": "k8s components can fail without causing the cluster to fail  Mahines can fail without causing the cluster to fail", 
+            "title": "3 - HA"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_2/#4-security", 
+            "text": "TLS  communication everywhere \n* Use anexternal PKI provider  API AuthN   AuthZ \n*  Disable  anonymous auth on localhost \n* Enforce  RBAC  and  NodeAuthorizers  Kueblet lockdown \n* Kueblet should have uniq ID \n* Disable readonly, public and cAdvisor ports \n-  Should be disabled in 1.11  Dashboard   Helm \n* Whitelist explict operations for  tiler \n* Don t give  cluster-admin  to everyones \n-  Has auth since 1.7", 
+            "title": "4 - Security"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_2/#5-deny-by-default-sec-bestpractices", 
+            "text": "Deny by default \n* RBAC \n* NetworkPolicy \n*  restrictive  PodSecurityPoicy", 
+            "title": "5 - Deny by default (sec Bestpractices)"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_2/#6-kubeadm", 
+            "text": "HA with Kubeadm \n*  kubeadm init  on each Master node + LB for API servers \n*  kubeadm join  on each Worker node  Tips: \n* Hosts admin and controlPlan resources on the masters nodes \n* Use  Pod anti-affinity \n* Prometheus  kube-state-metrics \n* Define SLI, SLO and SLA", 
+            "title": "6 - Kubeadm"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_2/#7-clusterapi", 
+            "text": "Features: \n* Upgrade \n* Auto-repair \n* Cluster autoscale", 
+            "title": "7 - ClusterAPI"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_2/#recap", 
+            "text": "Pay attention to your need  HA != MultiMaster  PKI is important  Declarative control is better", 
+            "title": "Recap"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_3/", 
+            "text": "20180504_talk_3\n\n\n\n\n\n\n\nKubeflow\n\n\nIntro\n\n\nKubeFlow\n\n\nDay2\n\n\nDemo\n\n\nSunoboy\n\n\nKsonnet Deploy\n\n\nArk\n\n\n\n\n\n\n\n\n\n\n\nKubeflow\n\n\nIntro\n\n\nIssues\n\n* Working in an environment\n\n* Deploying / Running in an other\n\n\nHeptio\n\n* Formed by k8s founders\n\n* Committed to OpenSource\n\n* K8s experts\n\n* Passion for tech\n\n\nTools intro\n\n* \nSonoboy\n: Conformance tests on k8s\n\n* \nksonnet\n: CfgMgmt for k8s manifests\n\n* \nArk\n: Backup tools for k8s\n\n\nKubeFlow\n\n\nML Stacks are composed of a lot services\n\n-\n HOW to use these tools accross our enironment ?\n\n\nKubeFlow:\n\n* Leverage K8s stacks and resources\n\n* To make portable runtime environment\n\n\nKubeflow\n\n* Code based deploy for all\n\n* Common OSS components\n\n* Reproducible\n\n* Wire everyting together (CRD for every kind of stack)\n\n\nDay2\n\n\nProd !\n\n\nDemo\n\n\nSunoboy\n\n\nConformance test from \nhttps://scanner.heptio.com\n your cluster\n\n\nKsonnet Deploy\n\n\nGet \nKubeFlow\n resources\n\n\nKsonnet deployment\n\n- \nksonnet init ${APP_NAME}\n: Boiler plate\n\n- \nksonnet env set NAME --namespace$NAMESPACE}\n\n- \nks registry\n\n- \nks pkg install ....\n\n- \nks generate ...\n\n- \nks apply\n\n-\n Deploy CRD and other k8s objects\n\n\n$ kubectl get po -n $NAMESPACE\n\nambasadors-XXXXX\ntf-hub-YY\ntj-job-dasboard-ZZ\ntf-job-operator-WWW\n\n\n\n\nArk\n\n\n\n\nCreate a storage endpoint to the Cloud Provider of your choice\n\n\nCreate access and policies for the storage\n\n*", 
+            "title": "20180504_talk_3"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_3/#kubeflow", 
+            "text": "", 
+            "title": "Kubeflow"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_3/#intro", 
+            "text": "Issues \n* Working in an environment \n* Deploying / Running in an other  Heptio \n* Formed by k8s founders \n* Committed to OpenSource \n* K8s experts \n* Passion for tech  Tools intro \n*  Sonoboy : Conformance tests on k8s \n*  ksonnet : CfgMgmt for k8s manifests \n*  Ark : Backup tools for k8s", 
+            "title": "Intro"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_3/#kubeflow_1", 
+            "text": "ML Stacks are composed of a lot services \n-  HOW to use these tools accross our enironment ?  KubeFlow: \n* Leverage K8s stacks and resources \n* To make portable runtime environment  Kubeflow \n* Code based deploy for all \n* Common OSS components \n* Reproducible \n* Wire everyting together (CRD for every kind of stack)", 
+            "title": "KubeFlow"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_3/#day2", 
+            "text": "Prod !", 
+            "title": "Day2"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_3/#demo", 
+            "text": "", 
+            "title": "Demo"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_3/#sunoboy", 
+            "text": "Conformance test from  https://scanner.heptio.com  your cluster", 
+            "title": "Sunoboy"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_3/#ksonnet-deploy", 
+            "text": "Get  KubeFlow  resources  Ksonnet deployment \n-  ksonnet init ${APP_NAME} : Boiler plate \n-  ksonnet env set NAME --namespace$NAMESPACE} \n-  ks registry \n-  ks pkg install .... \n-  ks generate ... \n-  ks apply \n-  Deploy CRD and other k8s objects  $ kubectl get po -n $NAMESPACE\n\nambasadors-XXXXX\ntf-hub-YY\ntj-job-dasboard-ZZ\ntf-job-operator-WWW", 
+            "title": "Ksonnet Deploy"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_3/#ark", 
+            "text": "Create a storage endpoint to the Cloud Provider of your choice  Create access and policies for the storage \n*", 
+            "title": "Ark"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_4/", 
+            "text": "20180504_talk_4\n\n\n\n\n\n\n\nAWS EKS\n\n\nIntro\n\n\nFeatures\n\n\nWorkflow\n\n\n1 - Create cluster\n\n\n2 - Workers Node\n\n\n3 - Addons\n\n\n\n\n\n\nConrformance challenge\n\n\nDemo\n\n\nFAQ\n\n\nKops / EKS\n\n\nFareGate\n\n\nMasters API Server config\n\n\nGA ?\n\n\nETCD access\n\n\nIAM integration\n\n\nCNI plugins ?\n\n\nPVC and EBS resizing\n\n\nService catalog ?\n\n\n\n\n\n\n\n\n\n\n\nAWS EKS\n\n\nIntro\n\n\nManaged k8s\n\n* Managed master, secured with encrypted ETCD\n\n* HA accross 3 AZ\n\n* Upgrades\n\n\nFeatures\n\n\n\n\nEnterprise workload support\n\n\nUpstram k8s experience\n\n\nAWS services integration seamless\n\n\nAWS will contribute to k8s\n\n\n\n\nWorkflow\n\n\nSteps:\n\n1. Create the Cluster (Control Plane)\n\n2. Provision the Workers\n\n3. Launch Addons\n\n4. Launch workload\n\n\n1 - Create cluster\n\n\n\n\nHA masters\n\n\nHA Etcds (Not collocated)\n\n\nIAM Integration\n\n\nPKI\n\n\nAutoscale\n\n\nLB endpoint for API server\n\n\n\n\n2 - Workers Node\n\n\n\n\nPreconfigured AMI provided\n\n\nUsing Packer scripts (Will be OpenSourced)\n\n\n\n\n3 - Addons\n\n\n\n\nHeptio IAM Authenticator\n\n\nIAM Auth support in Upstream 1.10\n\n\nOpenSouce CNI Plugins: \namazon-vpc-cni-k8s\n\n\nFlat network address space (Pods and instances at the sane level)\n\n\nUse ENIs + Secondary IPs (From EC2 perspective)\n\n\n\n\nConrformance challenge\n\n\nK8s assumption:\n\n* Masters and Workers are on the same network\n\n\nAWS approach:\n\n* EKS VPC -\n ELB with Static IP for API server reference for Kubelets [x]\n\n* Client VPC -\n Additionnal ENI on workers connected to EKS VPC\n\n\nPKI and TLS\n\n* Use native k8s pki mechanism\n\n\nDemo\n\n\naws eks describe-cluster --cluster-name\n\n{\n  \ncluster\n:\n    {\n      \nsubnet\n: XXXX,\n      \nsubnet\n: XXXX\n    }\n    ....\n\n}\n\n\n\n\n2 subnets:\n\n* 1 from worker VPC\n\n* 1 for EKS vpc\n\n\nFAQ\n\n\nKops / EKS\n\n\nWith EKS, Master are managed you won\nt see the EC2 instances in your console\n\n* You can not ssh into it\n\n* Only Stable API are activated\n\n* You can not deploy \nDaemonsets\n on the masters\n\n\nFareGate\n\n\nSupports:\n\n* ECS\n\n* K8s jobs and deployments\n\n\nMasters API Server config\n\n\nNO\n\n\nGA ?\n\n\nSoon\n\n\nETCD access\n\n\nNO\n\n\nIAM integration\n\n\n\n\nkube2iam: Not so great\n\n\nHeptio integration: Cool\n\n\nSPIFFE \n SPIRE: The direction\n\n\n\n\nCNI plugins ?\n\n\nFor now only \namazon-vpc-cni\n\nWill work with other solutions to integrate UX\n\n\nPVC and EBS resizing\n\n\nFor now, nothing new compared to Upstream, waiting for CSI\n\n\nService catalog ?\n\n\nWork on integration with OpenBrokage initiative to declare AWS Managed resources as k8s resources", 
+            "title": "20180504 talk 4"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_4/#intro", 
+            "text": "Managed k8s \n* Managed master, secured with encrypted ETCD \n* HA accross 3 AZ \n* Upgrades", 
+            "title": "Intro"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_4/#features", 
+            "text": "Enterprise workload support  Upstram k8s experience  AWS services integration seamless  AWS will contribute to k8s", 
+            "title": "Features"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_4/#workflow", 
+            "text": "Steps: \n1. Create the Cluster (Control Plane) \n2. Provision the Workers \n3. Launch Addons \n4. Launch workload", 
+            "title": "Workflow"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_4/#1-create-cluster", 
+            "text": "HA masters  HA Etcds (Not collocated)  IAM Integration  PKI  Autoscale  LB endpoint for API server", 
+            "title": "1 - Create cluster"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_4/#2-workers-node", 
+            "text": "Preconfigured AMI provided  Using Packer scripts (Will be OpenSourced)", 
+            "title": "2 - Workers Node"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_4/#3-addons", 
+            "text": "Heptio IAM Authenticator  IAM Auth support in Upstream 1.10  OpenSouce CNI Plugins:  amazon-vpc-cni-k8s  Flat network address space (Pods and instances at the sane level)  Use ENIs + Secondary IPs (From EC2 perspective)", 
+            "title": "3 - Addons"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_4/#conrformance-challenge", 
+            "text": "K8s assumption: \n* Masters and Workers are on the same network  AWS approach: \n* EKS VPC -  ELB with Static IP for API server reference for Kubelets [x] \n* Client VPC -  Additionnal ENI on workers connected to EKS VPC  PKI and TLS \n* Use native k8s pki mechanism", 
+            "title": "Conrformance challenge"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_4/#demo", 
+            "text": "aws eks describe-cluster --cluster-name\n\n{\n   cluster :\n    {\n       subnet : XXXX,\n       subnet : XXXX\n    }\n    ....\n\n}  2 subnets: \n* 1 from worker VPC \n* 1 for EKS vpc", 
+            "title": "Demo"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_4/#faq", 
+            "text": "", 
+            "title": "FAQ"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_4/#kops-eks", 
+            "text": "With EKS, Master are managed you won t see the EC2 instances in your console \n* You can not ssh into it \n* Only Stable API are activated \n* You can not deploy  Daemonsets  on the masters", 
+            "title": "Kops / EKS"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_4/#faregate", 
+            "text": "Supports: \n* ECS \n* K8s jobs and deployments", 
+            "title": "FareGate"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_4/#masters-api-server-config", 
+            "text": "NO", 
+            "title": "Masters API Server config"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_4/#ga", 
+            "text": "Soon", 
+            "title": "GA ?"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_4/#etcd-access", 
+            "text": "NO", 
+            "title": "ETCD access"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_4/#iam-integration", 
+            "text": "kube2iam: Not so great  Heptio integration: Cool  SPIFFE   SPIRE: The direction", 
+            "title": "IAM integration"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_4/#cni-plugins", 
+            "text": "For now only  amazon-vpc-cni \nWill work with other solutions to integrate UX", 
+            "title": "CNI plugins ?"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_4/#pvc-and-ebs-resizing", 
+            "text": "For now, nothing new compared to Upstream, waiting for CSI", 
+            "title": "PVC and EBS resizing"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_4/#service-catalog", 
+            "text": "Work on integration with OpenBrokage initiative to declare AWS Managed resources as k8s resources", 
+            "title": "Service catalog ?"
+        }, 
+        {
+            "location": "/2018/kubecon/day3/20180504_talk_5/", 
+            "text": "20180504_talk_5\n\n\n\n\n\n\n\nAWS EKS\n\n\n\n\n\n\n\nAWS EKS", 
+            "title": "20180504 talk 5"
         }
     ]
 }
